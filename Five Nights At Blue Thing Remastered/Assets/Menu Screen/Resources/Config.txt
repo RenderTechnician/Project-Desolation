@@ -1,0 +1,2 @@
+// Fullscreenstatus. Full = Fullscreen, Wind = Windowed
+Win
