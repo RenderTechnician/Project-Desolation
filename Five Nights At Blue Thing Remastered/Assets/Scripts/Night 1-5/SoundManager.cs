@@ -5,6 +5,8 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour {
     public AudioSource Lightbuzz;
     public bool Lightbool;
+    public Fadeoffice fader;
+    public Cutpower cutpower;
 	// Use this for initialization
 	void Start () {
 		
@@ -12,15 +14,16 @@ public class SoundManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	}
+
+        }
     public void lightbuzz()
     {
-        if(Lightbool == false)
+        if(Lightbool == false && cutpower.toggle == false)
         {
             Lightbuzz.Play();
             Lightbool = true;
         }
-        else
+        else if (Lightbool == true)
         {
             Lightbuzz.Stop();
             Lightbool = false;

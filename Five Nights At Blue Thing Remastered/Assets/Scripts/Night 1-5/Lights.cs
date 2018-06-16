@@ -10,6 +10,7 @@ public class Lights : MonoBehaviour {
     public Sprite[] backindex;
     public Animator down;
     public Camera_Animation camacc;
+    public Cutpower cutpower;
     // Use this for initialization
     void Start () {
 		
@@ -21,12 +22,12 @@ public class Lights : MonoBehaviour {
     }
     public void doorbutt()
     {
-        if (door == false)
+        if (door == false && cutpower.toggle == false)
         {
             office++;
             door = true;
         }
-        else
+        else if(door == true && cutpower.toggle == false)
         {
             office--;
             door = false;
@@ -34,13 +35,13 @@ public class Lights : MonoBehaviour {
     }
     public void lightbutt()
     {
-        if (lights == false)
+        if (lights == false && cutpower.toggle == false)
         {
             BackSprite.enabled = true;
             office = office + 2;
             lights = true;
         }
-        else
+        else if (lights == true && cutpower.toggle == false)
         {
             BackSprite.enabled = false;
             office = office - 2;

@@ -188,6 +188,82 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 27064956}
+--- !u!1 &94033352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 94033355}
+  - component: {fileID: 94033354}
+  - component: {fileID: 94033353}
+  m_Layer: 5
+  m_Name: Player Line 1 (line 2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &94033353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 94033352}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 11
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Text Line 1
+
+'
+--- !u!222 &94033354
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 94033352}
+--- !u!224 &94033355
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 94033352}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.380005, y: -1.2099991, z: 0}
+  m_LocalScale: {x: 0.026619999, y: 0.026619999, z: 0.026619999}
+  m_Children: []
+  m_Father: {fileID: 1815853964}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 4.38, y: -1.21}
+  m_SizeDelta: {x: 320.9, y: 97.103}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &147855463
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +597,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &947008115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 947008116}
+  - component: {fileID: 947008118}
+  - component: {fileID: 947008117}
+  m_Layer: 5
+  m_Name: Boss Line 1 (line 1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &947008116
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947008115}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.2711945, y: 1.9449997, z: 0}
+  m_LocalScale: {x: 0.026619999, y: 0.026619999, z: 0.026619999}
+  m_Children: []
+  m_Father: {fileID: 1815853964}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -4.2712, y: 1.945}
+  m_SizeDelta: {x: 320.9, y: 97.103}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &947008117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947008115}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 11
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Text Line 1
+
+'
+--- !u!222 &947008118
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 947008115}
 --- !u!1 &1110401922
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +1041,7 @@ GameObject:
   - component: {fileID: 1615018498}
   - component: {fileID: 1615018497}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Inputtext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1098,7 +1250,7 @@ GameObject:
   - component: {fileID: 1650911875}
   - component: {fileID: 1650911874}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: InputCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1147,7 +1299,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1650911873}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1545976796}
@@ -1168,7 +1320,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1650911873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.19, z: 90}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
   m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
   m_Children:
   - {fileID: 1623894968}
@@ -1208,17 +1360,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blip: {fileID: 2069545143}
-  send: {fileID: 147855464}
   modem: {fileID: 1766269262}
-  time: 0
-  whichtext: 0
-  state: 0
+  send: {fileID: 147855464}
   switcher: 0
-  name: 
+  inputcanvas: {fileID: 1650911876}
+  pickline: 0
+  pickline2: 0
+  time: 0
+  state: 0
+  whichtext: 0
   textline1: {fileID: 27064958}
   namedisplay: {fileID: 1850195591}
   connection: {fileID: 1848081643}
   input: {fileID: 1623894969}
+  sentence1part1:
+  - Hi
+  - Sorry to bother you
+  - I know you're on holiday
+  - Hope you're doing well
+  - I hate to be a pain
+  - 
+  - 'I know you''ve been after some extra hours '
+  - We've had a heptic day
+  - 'This is going to come as a suprise '
+  - Heyy
+  sentence1part2:
+  - Kevin has called in sick, we need you here ASAP
+  - the employee didn't turn up to his shift, can you come in?
+  - we had to fire Pedro for punching the area manager. Can you come in tonight?
+  - plans are moving at a faster than accelerated rate. I wouldn't normally ask, but
+    can you swap to nights this week?
+  - Reece, Mark & Helen have all quit. The last thing we heard were their screams.
+    Could you keep an eye on the place whilst the police investigate?
+  - We need you to come in tonight! Are you availiable?
+  - I had to move your hours forward as per your contract. Can you start at 12?
+  - you're needed early, Could you do the 12-6 shift?
+  - Mike got admitted to hospital, can you cover his shift?
+  - You lost the bet! You're doing the 12-6 shift tonight bro. That cool?
+  Sentence2:
+  - Lad
+  - Lad
+  - Lad
+  - Lad
+  - Lad
+  - Lad
+  - Lad
+  - Lad
+  - Lad
+  - Lad
+  name: 
+  BossLine1: {fileID: 947008117}
+  Playerline1: {fileID: 94033353}
+  BossLine2: {fileID: 1973089920}
 --- !u!4 &1696328248
 Transform:
   m_ObjectHideFlags: 0
@@ -1438,7 +1631,10 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 947008116}
+  - {fileID: 94033355}
+  - {fileID: 1973089919}
   m_Father: {fileID: 829858551}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1599,6 +1795,82 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1850195589}
+--- !u!1 &1973089918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1973089919}
+  - component: {fileID: 1973089921}
+  - component: {fileID: 1973089920}
+  m_Layer: 5
+  m_Name: Boss Line 2 (line 3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1973089919
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1973089918}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.2711945, y: -4.16, z: 0}
+  m_LocalScale: {x: 0.026619999, y: 0.026619999, z: 0.026619999}
+  m_Children: []
+  m_Father: {fileID: 1815853964}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -4.2711945, y: -4.16}
+  m_SizeDelta: {x: 320.9, y: 97.103}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1973089920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1973089918}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 11
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Text Line 1
+
+'
+--- !u!222 &1973089921
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1973089918}
 --- !u!1 &2069545142
 GameObject:
   m_ObjectHideFlags: 0

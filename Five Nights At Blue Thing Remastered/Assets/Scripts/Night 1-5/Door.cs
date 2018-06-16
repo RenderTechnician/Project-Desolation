@@ -7,6 +7,8 @@ public class Door : MonoBehaviour {
     public bool trigger;
     public AudioSource slam;
     public Camera_Animation camacc;
+    public Cutpower cuttpower;
+    public AudioSource click;
     // Use this for initialization
     void Start () {
 		
@@ -18,7 +20,7 @@ public class Door : MonoBehaviour {
         {
             count++;
         }
-        else if(trigger == false && count > 0)
+        else if(trigger == false && count > 0 )
         {
             count--;
         }
@@ -26,16 +28,20 @@ public class Door : MonoBehaviour {
     }
     public void initiateaction()
     {
-    if(trigger == false)
+    if(trigger == false && cuttpower.toggle == false)
         {
             slam.Play();
             trigger = true;
 
         }
-        else
+        else if(trigger == true)
         {
             slam.Play();
             trigger = false;
+        }
+    else if(trigger == false && cuttpower.toggle == true)
+        {
+            click.Play();
         }
     }
 }

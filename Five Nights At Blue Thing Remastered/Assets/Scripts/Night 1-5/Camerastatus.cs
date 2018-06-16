@@ -11,9 +11,11 @@ public class Camerastatus : MonoBehaviour {
     public bool activate;
     public GameObject spr;
     public SpriteRenderer white;
+    public bool lightup;
+    public int lightupint;
 	// Use this for initialization
 	void Start () {
-		
+        lightupint = 0;
 	}
 	
 	// Update is called once per frame
@@ -34,7 +36,7 @@ public class Camerastatus : MonoBehaviour {
         }
 
         spr.GetComponent<SpriteRenderer>().sprite = Static[gothrough];
-        this.GetComponent<SpriteRenderer>().sprite = sprite[count];	
+        this.GetComponent<SpriteRenderer>().sprite = sprite[count + lightupint];	
 	}
     public void cam1a()
     {
@@ -65,6 +67,25 @@ public class Camerastatus : MonoBehaviour {
         count = 4;
         activate = true;
         click.Play();
+    }
+    public void cam5a()
+    {
+        count = 5;
+        activate = true;
+        click.Play();
+    }
+    public void Lightup()
+    {
+if(lightup == false)
+        {
+            lightup = true;
+            lightupint = 6;
+        }
+        else
+        {
+            lightup = false;
+            lightupint = 0;
+        }
     }
 }
 

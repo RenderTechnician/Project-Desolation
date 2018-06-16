@@ -26,6 +26,9 @@ public class Camera_Animation : MonoBehaviour {
     public float scroll;
     public int countup;
     public Switch_graphics graphicalbridge;
+    public Fadeoffice officefader;
+    public GameObject Cameraparent;
+    public Cutpower cutpower;
 	// Use this for initialization
 	void Start () {
 	}
@@ -40,13 +43,13 @@ public class Camera_Animation : MonoBehaviour {
 	}
     public void Camacc()
     {
-    if (condit == false)
+    if (condit == false && officefader.config == false && cutpower.toggle == false)
         {
             condit = true;
             up.Play();
             down.Stop();
         }
-        else
+        else if (condit == true && officefader.config == false)
         {
             condit = false;
             down.Play();

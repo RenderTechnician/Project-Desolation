@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Five Nights With Blue Thing Remastered", "Five Nights With Blue Thing Remastered.csproj", "{4CA57F95-161A-8DD9-F9EE-333E91A7E0DB}"
 EndProject
 Global

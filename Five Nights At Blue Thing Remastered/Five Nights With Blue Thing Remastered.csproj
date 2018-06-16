@@ -14,6 +14,7 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectGenerator>VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.2.0f3</UnityVersion>
@@ -219,18 +220,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\6am\EndOfNight.cs" />
     <Compile Include="Assets\Scripts\GameConfig.cs" />
-    <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\Menu\Fade.cs" />
+    <Compile Include="Assets\Scripts\Menu\Menu.cs" />
+    <Compile Include="Assets\Scripts\Night 1-5\Battery.cs" />
     <Compile Include="Assets\Scripts\Night 1-5\Camera_Animation.cs" />
     <Compile Include="Assets\Scripts\Night 1-5\Camerastatus.cs" />
+    <Compile Include="Assets\Scripts\Night 1-5\Cutpower.cs" />
     <Compile Include="Assets\Scripts\Night 1-5\Door.cs" />
+    <Compile Include="Assets\Scripts\Night 1-5\Fadeoffice.cs" />
     <Compile Include="Assets\Scripts\Night 1-5\Lights.cs" />
     <Compile Include="Assets\Scripts\Night 1-5\Office.cs" />
+    <Compile Include="Assets\Scripts\Night 1-5\Paneltext.cs" />
     <Compile Include="Assets\Scripts\Night 1-5\Power.cs" />
     <Compile Include="Assets\Scripts\Night 1-5\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Night 1-5\Switch_graphics.cs" />
     <Compile Include="Assets\Scripts\Night 1-5\TextManager.cs" />
-    <Compile Include="Assets\Scripts\textmessages.cs" />
+    <Compile Include="Assets\Scripts\Texting\textmessages.cs" />
+    <Compile Include="Assets\Scripts\Warning screen\Warning.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Menu Screen\Resources\Config.txt" />

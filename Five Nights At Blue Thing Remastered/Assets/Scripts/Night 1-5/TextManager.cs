@@ -14,6 +14,8 @@ public class TextManager : MonoBehaviour {
     public bool camcondit1;
     public bool camcondit2;
     public bool camcondit3;
+    public bool camcondit4;
+    public Cutpower cutpower;
     // Use this for initialization
     void Start () {
         powerstatus = 99;
@@ -38,8 +40,7 @@ public class TextManager : MonoBehaviour {
     void timeup()
     {
         timeupper++;
-        if(timeupper >= 5000
-            )
+        if(timeupper >= 3600)
         {
             timeupper = 0;
             timebound++;
@@ -48,7 +49,7 @@ public class TextManager : MonoBehaviour {
     }
     public void power2()
     {
-        if(camcondit1 == false)
+        if(camcondit1 == false )
         {
             camcondit1 = true;
             multiplier++;
@@ -61,27 +62,40 @@ public class TextManager : MonoBehaviour {
     }
     public void power3()
     {
-        if (camcondit2 == false)
+        if (camcondit2 == false && cutpower.toggle == false)
         {
             camcondit2 = true;
-            multiplier++;
+            multiplier = multiplier + 2;
         }
-        else
+        else if (camcondit2 == true && cutpower.toggle == false)
         {
             camcondit2 = false;
-            multiplier--;
+            multiplier = multiplier - 2;
         }
     }
     public void power4()
     {
-        if (camcondit3 == false)
+        if (camcondit3 == false && cutpower.toggle == false)
         {
             camcondit3 = true;
             multiplier++;
         }
-        else
+        else if (camcondit3 == true && cutpower.toggle == false)
         {
             camcondit3 = false;
+            multiplier--;
+        }
+    }
+    public void power5()
+    {
+        if (camcondit4 == false)
+        {
+            camcondit4 = true;
+            multiplier++;
+        }
+        else
+        {
+            camcondit4 = false;
             multiplier--;
         }
     }
