@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TextManager : MonoBehaviour {
     public Text power;
@@ -16,15 +17,22 @@ public class TextManager : MonoBehaviour {
     public bool camcondit3;
     public bool camcondit4;
     public Cutpower cutpower;
+    public EndOfNight endofnight;
+    public int whichday;
+    public Text day;
     // Use this for initialization
     void Start () {
-        powerstatus = 99;
+        powerstatus = PlayerPrefs.GetInt("powerleft");
         multiplier = 1;
-	}
+      //  whichday = PlayerPrefs.GetInt("Currentnight");
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        day.text = "Night " + (whichday + 1);
+        if (timebound == 6) { whichday++; endofnight.getnight(whichday); SceneManager.LoadScene("6AM"); }
         timeup();
+        powerdown();
         power.text = "Power : " + powerstatus + " %";
         intervalpower = intervalpower + 1 * multiplier;
         if (intervalpower > 350)
@@ -35,7 +43,16 @@ public class TextManager : MonoBehaviour {
     }
     void powerdown()
     {
-
+        if (powerstatus == 0)
+        {
+            cutpower.toggle = true;
+            multiplier = 0;
+        }
+        if(powerstatus == 1 && cutpower.toggle == true)
+        {
+            cutpower.toggle = false;
+            multiplier++;
+        }
     }
     void timeup()
     {
@@ -49,12 +66,12 @@ public class TextManager : MonoBehaviour {
     }
     public void power2()
     {
-        if(camcondit1 == false )
+        if(camcondit1 == false && cutpower.toggle == false)
         {
             camcondit1 = true;
             multiplier++;
         }
-        else
+        else if (camcondit1 == true && cutpower.toggle == false)
         {
             camcondit1 = false;
             multiplier--;

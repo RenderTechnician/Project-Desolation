@@ -29,10 +29,19 @@ public class Fade : MonoBehaviour {
         {
             SceneManager.LoadScene("Text");
         }
+        if (fader > 100 && whichload == 2)
+        {
+            SceneManager.LoadScene("Loading");
+        }
     }
     public void fadeout()
     {
         switcher = true;
         whichload = 1;
+    }
+    public void fadeout2()
+    {
+        switcher = true;
+        whichload = 2;
     }
 }

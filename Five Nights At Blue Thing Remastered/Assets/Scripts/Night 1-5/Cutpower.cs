@@ -11,19 +11,21 @@ public class Cutpower : MonoBehaviour {
     public SpriteRenderer office;
     public SpriteRenderer Desk;
     public SpriteRenderer Door;
+    public SpriteRenderer monstroudesk;
     public TextManager textmanager;
     public AudioSource error;
     public AudioSource click;
     public Sprite[] cameraimage;
     public Button cameraacc;
     public int onoroff;
+    public int time;
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        time++;
         cameraacc.GetComponent<Image>().sprite = cameraimage[onoroff];
         pitch = common / 50.0f;
         faders();
@@ -51,11 +53,23 @@ public class Cutpower : MonoBehaviour {
     }
     void faders()
     {
+        if (textmanager.whichday == 0 &&  60> time)
+        {
+            office.color = new Color(0.0f, 0.0f, 0.0f, 255.0f);
+            Desk.color = new Color(0.0f, 0.0f, 0.0f, 255.0f);
+            Door.color = new Color(0.0f, 0.0f, 0.0f, 255.0f);
+            fan.pitch = pitch;
+            pitch = 0;
+            textmanager.multiplier = 0;
+        }
+        else if (time > 60){
         //controls pitch of sounds and alpha transparency of sprites 
         office.color = new Color((common / 50.0f), (common / 50.0f), (common / 50.0f), 255.0f);
         Desk.color = new Color((common / 50.0f), (common / 50.0f), (common / 50.0f), 255.0f);
         Door.color = new Color((common / 50.0f), (common / 50.0f), (common / 50.0f), 255.0f);
-        fan.pitch = pitch;
+        monstroudesk.color = new Color((common / 50.0f), (common / 50.0f), (common / 50.0f), 255.0f);
+            fan.pitch = pitch;
+        }
     }
     void thecommon()
     {

@@ -1,0 +1,23 @@
+Battery --> Maintenance Texts (parent object)
+
+Camera_Animation --> Camera_Flip (parent object)
+
+Camerastatus --> Cams (parent object)
+
+Cutpower --> Maintenance Texts (parent object)
+
+Door --> Door_Sprite (parent object)
+
+Fadeoffice --> Office_Canvas/Maintenance Button (parent object)
+
+Lights --> Office (parent object)
+
+Office --> Desk (parent object)
+
+Paneltext --> Maintenance Texts (parent object)
+
+SoundManager --> SoundManager (parent object)
+
+Switch_Graphics -->	Graphic_Switcher (parent object)
+
+TextManager --> TextManager (parent object)

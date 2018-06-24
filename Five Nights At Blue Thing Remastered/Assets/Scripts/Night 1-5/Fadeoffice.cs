@@ -13,6 +13,7 @@ public class Fadeoffice : MonoBehaviour {
     public AudioSource flip;
 	// Use this for initialization
 	void Start () {
+
 	}
 	
 	// Update is called once per frame

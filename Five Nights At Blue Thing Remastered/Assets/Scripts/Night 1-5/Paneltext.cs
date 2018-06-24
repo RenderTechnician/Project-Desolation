@@ -16,12 +16,15 @@ public class Paneltext : MonoBehaviour {
     public Text rightarrow;
     public Text battery;
     public Text syphon;
+    public Text date;
     public Image green;
     public SpriteRenderer greensquare1;
     public SpriteRenderer static1;
+    public string[] datestring;
+    public TextManager textmanager;
     // Use this for initialization
     void Start () {
-		
+        date.text = "Date: " + datestring[textmanager.whichday];
 	}
 	
 	// Update is called once per frame
@@ -43,7 +46,7 @@ public class Paneltext : MonoBehaviour {
             hour++;
             minute = 0;
         }
-        time.text =  hour.ToString("00") +" : "+ minute.ToString("00") + " : " + second.ToString("00");
+        time.text = "Time: " + hour.ToString("00") +" : "+ minute.ToString("00") + " : " + second.ToString("00");
     }
     void visibility()
     {
@@ -63,6 +66,7 @@ if(fader.config == true)
             battery.enabled = false;
             syphon.enabled = false;
             green.enabled = false;
+            date.enabled = false;
             shower = 0;
         }
             if(shower > 20 && fader.config == true)
@@ -77,6 +81,7 @@ if(fader.config == true)
                 battery.enabled = true;
                 syphon.enabled = true;
                 green.enabled = true;
+                date.enabled = true;
             }
     }
 }

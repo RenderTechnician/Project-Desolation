@@ -1,0 +1,28 @@
+To Do
+==========
+Comment all scripts
+add save slots to the game intead of "New Game" & "Continute" ala Doom 2016 (see screenshot)
+Have three save slots
+If playerprefs.getint("Currentnight" + that specific save slot, will need to be manually defined) > 0 then change "NEW SLOT" to "GAME SLOT 01,02 or O3 respecively"
+
+When Night 1-5 loads set the following attributes to playerprefs("definingstring" + save slot number)
+----
+Power
+batterys[0 - 4]
+textmanager.powerstatus
+----
+
+Change "New Game" to Play Game
+When they click the button transist to the select save state screen
+Have the "START GAME" & "EXTRAS" texts fade out and the select save stage text fade in
+
+Have the following data availiable to the player when they bring up that save state:
+Last Played : Date & Time
+The night they're currently on
+The power in the main battery
+The power in all of the auxilery batteries
+The option to delete their data
+Large Text labelled "Start" that when pressed goes to the loading frame
+
+Furthermore we need to set an int based on the currently selected state and pass this int to both the loading screen and the "Night 1-5" scene.
+This is int will assure that the correct night is displayed and the correct data is loaded for that night.
