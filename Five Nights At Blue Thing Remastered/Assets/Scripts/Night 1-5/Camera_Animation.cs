@@ -4,16 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Camera_Animation : MonoBehaviour {
-    public SpriteRenderer Cams;
-    public Sprite[] anim;
-    public AudioSource up;
-    public AudioSource down;
-    public AudioSource fan;
-    public AudioSource buzz;
-    public int count;
-    public bool condit;
-    public bool cams;
-    public bool scrollswitch;
+    //==//
+    public SpriteRenderer Cams;              // Camera spriterender. Activates if condit = true and count == 12, deactivates if condit = false.
+    public Sprite[] anim;                   // Array containing all 10 camera flip animation frames.
+    public AudioSource up;                 // Sound that plays when the camera is flipped up (condit == False).
+    public AudioSource down;              // Sound that plays when camera is flipped down (Condit == true).
+    public AudioSource fan;              // Sound effect for the fan.
+    public AudioSource buzz;            // Buzz that plays when the user presses the "Light" button.
+    public int countup;                // 
+    public int count;                 // Determines which frame of the Camera_Flip animation is playing. If == 12 then Cams (bool) is activated.
+    public bool condit;              // Activates when the user clicks on the "Camera Button".
+    public bool cams;               // Determies whether the camera spriterenderer is visible, activates if count == 12 and deactivates if count != 12.
+    public bool scrollswitch;      // Determines which direction the camera moves if true move right and if true go left. 
+    //==//
+    public float scroll;                     //
     public SpriteRenderer map;
     public SpriteRenderer cameras;
     public SpriteRenderer statics;
@@ -23,8 +27,6 @@ public class Camera_Animation : MonoBehaviour {
     public Button lights;
     public Button door;
     public Camera camera1;
-    public float scroll;
-    public int countup;
     public Switch_graphics graphicalbridge;
     public Fadeoffice officefader;
     public GameObject Cameraparent;
