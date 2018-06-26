@@ -1,0 +1,3 @@
+Fix "Go to office" and "go to moonitor room" buttons as they trigger incorrectly
+render and add "Turn around" animation to the game.
+Allow users to type into the monitor and program commands
