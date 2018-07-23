@@ -17,20 +17,20 @@ public class TextManager : MonoBehaviour {
     public bool camcondit3;
     public bool camcondit4;
     public Cutpower cutpower;
-    public EndOfNight endofnight;
     public int whichday;
     public Text day;
     // Use this for initialization
     void Start () {
-        powerstatus = PlayerPrefs.GetInt("powerleft");
+
         multiplier = 1;
-      //  whichday = PlayerPrefs.GetInt("Currentnight");
+        whichday = PlayerPrefs.GetInt("Currentnight");
+        Debug.Log(PlayerPrefs.GetInt("Currentnight"));
     }
 	
 	// Update is called once per frame
 	void Update () {
-        day.text = "Night " + (whichday + 1);
-        if (timebound == 6) { whichday++; endofnight.getnight(whichday); SceneManager.LoadScene("6AM"); }
+        day.text = "Night " + (PlayerPrefs.GetInt("Currentnight") + 1);
+        if (timebound == 6) { whichday++;  PlayerPrefs.SetInt("Currentnight", whichday); SceneManager.LoadScene("6AM"); }
         timeup();
         powerdown();
         power.text = "Power : " + powerstatus + " %";

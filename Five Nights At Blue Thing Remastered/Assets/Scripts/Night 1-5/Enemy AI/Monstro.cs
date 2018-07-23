@@ -163,6 +163,8 @@ public class Monstro : MonoBehaviour {
             monstroanim.ResetTrigger("start to off (stage 3)");
             monstroanim.ResetTrigger("start to on (stage 3)");
             monstroanim.ResetTrigger("on to off (stage 3)");
+            monstroanim.ResetTrigger("on to start (stage 4)");
+            monstroanim.ResetTrigger("off to start (stage 4)");
             monstrouspr.sortingOrder = -1;
             if (lights.lights == true) { lights.lightbutt(); soundmanager.Lightbool = false; soundmanager.Lightbuzz.Stop(); }
         }
@@ -189,6 +191,20 @@ public class Monstro : MonoBehaviour {
         if (1 > monstroucountdown && stage == 3 && door.trigger == true)
         {
             if (lights.lights == true) { lights.lightbutt(); soundmanager.Lightbool = false; soundmanager.Lightbuzz.Stop(); }
+            monstroucountdown = 2000;
+            stage = 0;
+            whereishe = 5;
+            monstroanim.ResetTrigger("start to off (stage 4)");
+            monstroanim.ResetTrigger("on to start (stage 1)");
+            monstroanim.ResetTrigger("on to start (stage 2)");
+            monstroanim.ResetTrigger("on to start (stage 3)");
+            monstroanim.ResetTrigger("on to off (stage 4)");
+            monstroanim.ResetTrigger("start to on (stage 4)");
+            monstroanim.ResetTrigger("off to start (stage 1)");
+            monstroanim.SetTrigger("on to start (stage 4)");
+            monstroanim.SetTrigger("off to start (stage 4)");
+            monstrouspr.sortingOrder = 4;
+            scarebool = false;
         }
         //kill player
         else if (1 > monstroucountdown && stage == 3 && door.trigger == false)

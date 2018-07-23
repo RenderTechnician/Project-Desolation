@@ -117,6 +117,7 @@ public class textmessages : MonoBehaviour {
             BossLine2.enabled = true;
             BossLine2.text = "BOSS" + "\n" + "--------------------------------------------------------------------------" + "\n" + Sentence2[pickline];
             blip.Play();
+            PlayerPrefs.SetString("playername1", name);
         }
 
     }

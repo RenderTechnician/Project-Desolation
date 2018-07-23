@@ -53,7 +53,7 @@ public class Cutpower : MonoBehaviour {
     }
     void faders()
     {
-        if (textmanager.whichday == 0 &&  60> time)
+        if (60> time)
         {
             office.color = new Color(0.0f, 0.0f, 0.0f, 255.0f);
             Desk.color = new Color(0.0f, 0.0f, 0.0f, 255.0f);
