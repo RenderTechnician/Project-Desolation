@@ -15,8 +15,6 @@ public class Fade : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        GetComponent<SpriteRenderer>().color = new Color(0.0f, 0.0f, 0.0f, (fader / 50.0f));
-        time++;
         if (time > 0 && fader > 0 && switcher == false)
         {
             fader--;
@@ -25,14 +23,8 @@ public class Fade : MonoBehaviour {
         {
             fader++;
         }
-        if(fader > 100 && whichload == 1)
-        {
-            SceneManager.LoadScene("Text");
-        }
-        if (fader > 100 && whichload == 2)
-        {
-            SceneManager.LoadScene("Loading");
-        }
+        GetComponent<SpriteRenderer>().color = new Color(0.0f, 0.0f, 0.0f, (fader / 50.0f));
+        time++; whichscene();
     }
     public void fadeout()
     {
@@ -43,5 +35,26 @@ public class Fade : MonoBehaviour {
     {
         switcher = true;
         whichload = 2;
+    }
+    public void fadeout3()
+    {
+        switcher = true;
+        whichload = 3;
+    }
+    void whichscene()
+    {
+        if (fader > 100 && whichload == 1)
+        {
+            PlayerPrefs.SetInt("Currentnight", 0);
+            SceneManager.LoadScene("Text");
+        }
+        if (fader > 100 && whichload == 2)
+        {
+            SceneManager.LoadScene("Loading");
+        }
+        if (fader > 100 && whichload == 3)
+        {
+            SceneManager.LoadScene("Extras");
+        }
     }
 }

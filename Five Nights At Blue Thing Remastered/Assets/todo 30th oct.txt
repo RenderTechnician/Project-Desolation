@@ -1,0 +1,39 @@
+Things to do
+
+Add version number to game - done
+Add phone calls to game - done
+Add voice clips for kevin - done
+Save modified Kevin variables at end of frame - done
+Finish extras menu - done
+Setup Custom Night
+When you enter the text message scene set whichday to zero - done
+
+Add day jumpscare to night 1-5, will play when camera  - done
+or panel is up 
+
+*bug* - using the light lowers the framerate by 15fps on low end devices. This needs fixing 
+
+Add tutorial slides for the user explaining their day duties
+
+Add an Agressive mode to the settings menu
+
+Add descriptions from 
+
+
+
+Latest
+=======
+Remove Tablet Mode
+Add a 'you won' screen when you beat the 5th night 
+Add a honking noise to toy chicas face and yelling noise to kevin
+Add banging noise for when monstrou leaves the door - done
+Stop Monstrou pulling down the camera when he's at the players desk - done
+He seemed to get through the door even though it was closed  - done
+Add 'mute call' button - done
+Using doors etc doesn't change power usage, look at how calculations are done - done
+fix status command - done
+fix size of how much time left graphic - done
+if you click turn around and then unhide then text will appear not on monitor 
+When time == 0 it's not going to the right screen - done
+
+On boot the game defaults to 60fps - done

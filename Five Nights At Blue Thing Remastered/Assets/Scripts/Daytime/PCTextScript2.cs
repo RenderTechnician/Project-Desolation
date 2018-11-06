@@ -25,7 +25,6 @@ public class PCTextScript2 : MonoBehaviour {
     // Use this for initialization
     void Start () {
         solarbattery = PlayerPrefs.GetInt("battery1solar") + Random.Range(100,150);
-        Debug.Log(solarbattery);
         flashlight.computer.color = new Color(0.5f, 0.5f, 0.5f, 1.0f);
 	}
 	
@@ -38,7 +37,7 @@ public class PCTextScript2 : MonoBehaviour {
     }
     void keyboard()//Called once per frame, calls appropriate method when the Return key is pressed and plays the key stroke sfx when any key is pressed.
     {
-        if (Input.GetKeyDown(KeyCode.Return) && flashlight.whichselect == 2)
+        if (Input.GetKeyDown(KeyCode.Return) && flashlight.whichselect == 2 && flashlight.delaytrans == 0)
         {
             size++;
             variablebridge.enteredvaluelist.Add(flashlight.input.text);
@@ -51,7 +50,7 @@ public class PCTextScript2 : MonoBehaviour {
             else if (flashlight.input.text == "!toggle" && syphonmodestat == false && (Input.GetKeyDown(KeyCode.Return))) { toggle(); }
             else { error(); }
         }
-        else if (Input.anyKeyDown && !Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2) && flashlight.whichselect == 2 && !(Input.GetKeyDown(KeyCode.Return)))
+        else if (flashlight.delaytrans == 0 && Input.anyKeyDown && !Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2) && flashlight.whichselect == 2 && !(Input.GetKeyDown(KeyCode.Return)))
         {
             keyboardtap.Play();
         }
@@ -62,10 +61,15 @@ public class PCTextScript2 : MonoBehaviour {
         catcher = true;
         //help command
         keyboardtap.Play();
-            string tempv = flashlight.input.text;
+        string tempv = flashlight.input.text;
         //help text line
-        flashlight.computer.text = flashlight.computer.text + "\n" + "\n" + "========================================================" +
-            "Full List Of Commands" + "\n" + "\n" +
+        flashlight.computer.text = flashlight.computer.text + "\n" + "\n";
+
+            if(PlayerPrefs.GetInt("Width") == 1280) { flashlight.computer.text = flashlight.computer.text + "========================================================"; } //57 lines
+            if (PlayerPrefs.GetInt("Width") == 1600) { flashlight.computer.text =flashlight.computer.text +  "========================================================="; } //58 lines
+            if (PlayerPrefs.GetInt("Width") == 1920) { flashlight.computer.text= flashlight.computer.text +  "=========================================================="; } //59 lines
+        flashlight.computer.text = flashlight.computer.text +
+       "Full List Of Commands" + "\n" + "\n" +
 
             //siphon command
             "!siphon" + "\n" + "\n" + "<color=green>Puts the system in siphon mode.</color>"
@@ -74,9 +78,6 @@ public class PCTextScript2 : MonoBehaviour {
             "!siph(mainbat,'loaded battery')" + "\n" + "\n" + "<color=green>Allows you to siphon from main battery to auxilery battery as long as auxilery battery is less than 100%, replace 'loaded battery' with" +
             " the battery you would like to charge e.g. !siph(mainbat, battery1). Must be in syphon mode to perform command.</color>" + "\n" + "\n" +
 
-            //!statuscommand
-            "!status('battery')" + "\n" + "\n" + "<color=green>Allows you to see how much power is in a specific battery. You can use this command for the auxilery batteries or the main battery.</color>" +
-             "\n" + "\n" +
              //!clear command
              "!clear" + "\n" + "\n" + "<color=green>Clears all of the text on the display.</color>" +
              "\n" + "\n" +
@@ -85,7 +86,7 @@ public class PCTextScript2 : MonoBehaviour {
             "!toggle" + "\n" + "\n" + "<color=green>Allows you to turn the lights on and off outside of your room. Don't forget this drains power from mainbat!</color>" +
              "\n" + "\n";
 
-        size = size + 2;
+        size = size + 3;
         catcher = false;
 
     }
@@ -178,7 +179,7 @@ public class PCTextScript2 : MonoBehaviour {
     void siph2() //Called when siphacc == true. Starts the procedure of adding power to your batteries ever 10 seconds
     {
         siphoncount++;
-        if (siphoncount > 600)
+        if (siphoncount > 300)
         {
             solarbattery--;
             flashlight.computer.text = flashlight.computer.text + "\n" + "\n" + "1% added to Battery 1, solar battery now at " + solarbattery + " %. Type 'break' to halt siphon";
@@ -199,20 +200,17 @@ public class PCTextScript2 : MonoBehaviour {
     }
     void error() //if the command is unknown then this method is called. Will return a different error based on the value of syphonmodestat
     {
-        Debug.Log("what");
     if (catcher == false && syphonmodestat == false && (Input.GetKeyDown(KeyCode.Return)))
     {
         //no known commands
         string tempv = flashlight.input.text;
         flashlight.computer.text = flashlight.computer.text + "\n" + "\n" + "<color=red>The command you have entered is invalid. If you require assistance please type !help</color>" + "\n" + "\n" + tempv;
-        Debug.Log("catch2");
     }
         else if (catcher == false && syphonmodestat == true && (Input.GetKeyDown(KeyCode.Return)))
         {
             //no known commands
             string tempv = flashlight.input.text;
             flashlight.computer.text = flashlight.computer.text + "\n" + "\n" + "<color=red>The command you have entered is not a siphon mode command, please exit siphon mode using !exit and try again </color>" + "\n" + "\n" + tempv;
-            Debug.Log("catch3");
         }
     }
     void clear() //clears all of text on the screen and sets the screen height back to zero

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Camerastatus : MonoBehaviour {
     public Sprite[] sprite;
@@ -13,10 +14,12 @@ public class Camerastatus : MonoBehaviour {
     public SpriteRenderer white;
     public bool lightup;
     public int lightupint;
+    public GameObject buttonparent;
 	// Use this for initialization
 	void Start () {
         lightupint = 0;
-	}
+        buttonparent.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,7 +32,7 @@ public class Camerastatus : MonoBehaviour {
         {
             white.enabled = false;
         }
-        if (gothrough > 6)
+        if (gothrough > 5)
         {
             activate = false;
             gothrough = 0;
@@ -41,38 +44,35 @@ public class Camerastatus : MonoBehaviour {
     public void cam1a()
     {
         count = 0;
-        activate = true;
-        click.Play();
     }
     public void cam1b()
     {
         count = 1;
+        buttonparent.SetActive(true);
         activate = true;
         click.Play();
     }
     public void cam2a()
     {
         count = 2;
-        activate = true;
-        click.Play();
     }
     public void cam3a()
     {
         count = 3;
-        activate = true;
-        click.Play();
     }
     public void cam4a()
     {
         count = 4;
-        activate = true;
-        click.Play();
     }
     public void cam5a()
     {
         count = 5;
+    }
+    public void Camfunction()
+    {
         activate = true;
         click.Play();
+        buttonparent.SetActive(false);
     }
     public void Lightup()
     {

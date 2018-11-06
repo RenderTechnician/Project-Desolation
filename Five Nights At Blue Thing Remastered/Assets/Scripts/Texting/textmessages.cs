@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class textmessages : MonoBehaviour {
+public class textmessages : MonoBehaviour
+{
     public AudioSource blip;
     public AudioSource modem;
     public AudioSource send;
@@ -27,18 +29,19 @@ public class textmessages : MonoBehaviour {
     public Text BossLine2;
 
     // Use this for initialization
-	void Start () {
+    void Start()
+    {
         textline1.text = "System: " + "\n" + "\n" + "Thankyou for signing up with Rippedtoad Communication Service, please enter your name to verify your identity."
             + "\n" + "----------------------------------------------------------------------------------------------------------------";
-        input.text = "Enter Your Name, then press Enter";
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        input.text = "Name";
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         stage1();
         stage2();
-        camscroller();
-	}
+    }
     void stage1()
     {
         if (switcher == false)
@@ -61,7 +64,6 @@ public class textmessages : MonoBehaviour {
             input.text = "";
             namedisplay.text = "Hello there " + name + " Please wait whilst we log you in.";
             send.Play();
-            Debug.Log("success");
             namedisplay.enabled = true;
             state = 2;
             switcher = false;
@@ -74,10 +76,12 @@ public class textmessages : MonoBehaviour {
         }
         if (state == 2 && time > 1800)
         {
-            connection.text = "Connection succesful, press any key to continue";
+            connection.text = "Connection succesful, loading data!!";
             modem.Stop();
             time = 0;
             state = 3;
+            StartCoroutine("loadstage2");
+            
         }
         if (Input.anyKeyDown && state == 3)
         {
@@ -90,11 +94,11 @@ public class textmessages : MonoBehaviour {
     }
     void stage2()
     {
-        if(state == 4  && time == 299)
+        if (state == 4 && time == 299)
         {
             pickline = Random.Range(0, sentence1part1.Length);
             pickline2 = Random.Range(0, sentence1part1.Length);
-            BossLine1.text = "BOSS" +"\n" + "--------------------------------------------------------------------------" + "\n"
+            BossLine1.text = "BOSS" + "\n" + "--------------------------------------------------------------------------" + "\n"
                 + sentence1part1[pickline] + " " + name + " ," + sentence1part2[pickline2];
             BossLine1.enabled = true;
             switcher = true;
@@ -112,19 +116,50 @@ public class textmessages : MonoBehaviour {
             switcher = false;
             time = 0;
         }
-        if(time == 299 && state == 5)
+        if (time == 299 && state == 5)
         {
             BossLine2.enabled = true;
             BossLine2.text = "BOSS" + "\n" + "--------------------------------------------------------------------------" + "\n" + Sentence2[pickline];
             blip.Play();
             PlayerPrefs.SetString("playername1", name);
         }
+        if (time > 700 && state == 5)
+        {
+            SceneManager.LoadScene("Loading");  
+        }
 
     }
-    void camscroller()
+    public void Submit1()
     {
-
+        if(state == 1)
+        {
+            name = input.text;
+            input.text = "";
+            namedisplay.text = "Hello there " + name + " Please wait whilst we log you in.";
+            send.Play();
+            namedisplay.enabled = true;
+            state = 2;
+            switcher = false;
+            inputcanvas.enabled = false;
+        }
+        else if(state == 5)
+        {
+            state = 5;
+            send.Play();
+            Playerline1.enabled = true;
+            Playerline1.text = "You" + "\n" + "--------------------------------------------------------------------------" + "\n" + input.text;
+            switcher = false;
+            time = 0;
+            inputcanvas.enabled = false;
+        }
     }
-}
-public class values { 
+    public IEnumerator loadstage2()
+    {
+        yield return new WaitForSeconds(2.5f);
+        connection.enabled = false;
+        namedisplay.enabled = false;
+        textline1.enabled = false;
+        state = 4;
+        send.Play();
+    }
 }

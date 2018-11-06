@@ -6,47 +6,55 @@ using UnityEngine.SceneManagement;
 
 public class TextManager : MonoBehaviour {
     public Text power;
-    public Text time;
-    public int powerstatus;
-    public int multiplier;
-    public int intervalpower;
-    public int timeupper;
-    public int timebound;
-    public bool camcondit1;
-    public bool camcondit2;
-    public bool camcondit3;
-    public bool camcondit4;
+
+    public int powerstatus , multiplier, intervalpower, timeupper , timebound;
+
+    public bool camcondit1 , camcondit2 , camcondit3 , camcondit4;
+
     public Cutpower cutpower;
+
+    public Camera_Animation camacc;
+
     public int whichday;
-    public Text day;
+
+    public float powerdeterminer;
+
     // Use this for initialization
     void Start () {
-
         multiplier = 1;
+        timebound = -1;
         whichday = PlayerPrefs.GetInt("Currentnight");
-        Debug.Log(PlayerPrefs.GetInt("Currentnight"));
+        InvokeRepeating("timeup", 0.0f, 60.0f);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        day.text = "Night " + (PlayerPrefs.GetInt("Currentnight") + 1);
-        if (timebound == 6) { whichday++;  PlayerPrefs.SetInt("Currentnight", whichday); SceneManager.LoadScene("6AM"); }
-        timeup();
         powerdown();
         power.text = "Power : " + powerstatus + " %";
         intervalpower = intervalpower + 1 * multiplier;
-        if (intervalpower > 350)
+        if(multiplier > 0) { powerdeterminer += Time.deltaTime * 50; }
+        if (powerdeterminer > 350/multiplier)
         {
-            powerstatus--;
-            intervalpower = 0;
+            powerdraw();
+            powerdeterminer = 0;
         }
     }
+
+    void powerdraw()
+    {
+        if(powerstatus > 0 && multiplier > 0)
+        {
+            powerstatus--;
+        }
+    }
+
     void powerdown()
     {
         if (powerstatus == 0)
         {
             cutpower.toggle = true;
             multiplier = 0;
+            camacc.condit = false;
         }
         if(powerstatus == 1 && cutpower.toggle == true)
         {
@@ -54,16 +62,12 @@ public class TextManager : MonoBehaviour {
             multiplier++;
         }
     }
+
     void timeup()
     {
-        timeupper++;
-        if(timeupper >= 3600)
-        {
-            timeupper = 0;
-            timebound++;
-            time.text = timebound + " AM";
-        }
+        timebound++;
     }
+
     public void power2()
     {
         if(camcondit1 == false && cutpower.toggle == false)
@@ -77,6 +81,7 @@ public class TextManager : MonoBehaviour {
             multiplier--;
         }
     }
+
     public void power3()
     {
         if (camcondit2 == false && cutpower.toggle == false)
@@ -90,6 +95,7 @@ public class TextManager : MonoBehaviour {
             multiplier = multiplier - 2;
         }
     }
+
     public void power4()
     {
         if (camcondit3 == false && cutpower.toggle == false)
@@ -103,6 +109,7 @@ public class TextManager : MonoBehaviour {
             multiplier--;
         }
     }
+
     public void power5()
     {
         if (camcondit4 == false)

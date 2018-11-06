@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Warning : MonoBehaviour {
-    public int fader;
-    public int time;
+    public float time, fader;
 	// Use this for initialization
 	void Start () {
 	}
@@ -13,14 +12,14 @@ public class Warning : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GetComponent<SpriteRenderer>().color = new Color(255.0f, 255.0f, 255.0f, (fader/50.0f));
-        time++;
+        time += Time.deltaTime * 50;
         if(200 > time)
         {
-            fader++;
+            fader += Time.deltaTime * 50;
         }
         else if(time > 200)
         {
-            fader--;
+            fader -= Time.deltaTime * 50;
         }
         if(0 > fader)
         {

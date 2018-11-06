@@ -11,12 +11,23 @@ public class Loading : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         currentnight = PlayerPrefs.GetInt("Currentnight");
-        whichnight.text = "Night " + (currentnight + 1);	
+        whichnight.text = "Night " + (currentnight + 1);
+        InvokeRepeating("TimeUpdate", 1.0f, 1.0f);
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    void TimeUpdate()
+    {
         time++;
-        if(time > 600) { SceneManager.LoadScene("night 1-5"); }
+        if (time == 8)
+        {
+            if (PlayerPrefs.GetInt("D/N") == 0)
+            {
+                SceneManager.LoadScene("night 1-5");
+            }
+            else if (PlayerPrefs.GetInt("D/N") == 1)
+            {
+                SceneManager.LoadScene("daytime");
+            }
+        }
     }
 }
